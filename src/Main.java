@@ -74,7 +74,7 @@ while (running) {
 		if (!gameGoing) {
 			o.setx(683);
 			o.sety(294);
-			o.setxv(-8);
+			o.setxv(o.getRockVelocity());
 			c.setx(0);
 			c.sety(294);
 			c.setyv(0);

@@ -5,13 +5,15 @@ private int x;
 private int y;
 private int xv;
 private int yv;
+private int rockVelocity;
 
 private boolean addedScore = false;
 
 public Obstacle() {
 	this.x = 683;
 	this.y = 294;
-	this.xv = -8;
+	newRockVelocity();
+	this.xv = rockVelocity;
 }
 public int getx(){
 	return x;
@@ -34,6 +36,12 @@ public void setx(int x) {
 public void sety(int y) {
 	this.y = y;
 }
+public int getRockVelocity() {
+	return rockVelocity;
+}
+public void newRockVelocity() {
+	rockVelocity = (int) (6 * Math.random() - 12);
+}
 public void update(){
 	//System.out.println(x+" "+xv);
 	x=x+xv;
@@ -49,7 +57,8 @@ public void update(){
 	}
 	if(x<-50){
 		x=683;
-		xv = -8;
+		newRockVelocity();
+		xv = rockVelocity;
 		addedScore = false;
 	}
 }
